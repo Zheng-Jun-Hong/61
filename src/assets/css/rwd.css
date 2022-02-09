@@ -1,0 +1,49 @@
+@media screen and (max-width: 1660px){
+    body{
+        font-size: 14px;
+    }
+    .station_cards{
+        width: 33%;
+    }
+    .pagetop_info, .ptop_btns{
+        flex-wrap: wrap;
+        margin: 0 0 1rem;
+    }
+    .ttlc_list{
+        padding: .7rem 1.5rem;
+    }
+    .ttlc_wrap{
+        min-width: 330px;
+    }
+    .hom_station_wrap{
+        width: 390px;
+        height: 510px;
+    }
+    .mnav_wrap a{
+        line-height: 1.5;
+    }
+    .mnav_wrap a i{
+        line-height: 2.3;
+    }
+    .mnav_wrap a i:before{ 
+        line-height: 1.6;
+        display: block;
+    }
+    #clock{
+        font-size: 3vw;
+    }
+    .hom_station h2{
+        padding: 1rem 0 .5rem;
+    }
+    .homst_btminfo > div{
+        padding: .7rem 0;
+    }
+}
+@media screen and (max-width: 1440px){
+}
+@media screen and (max-width: 768px){
+}
+@media screen and (max-width: 550px){
+}
+@media screen and (max-width: 375px){
+}

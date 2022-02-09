@@ -1,0 +1,209 @@
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, meter, nav, object, ol, output, p, pre, progress, q, rp, rt, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video, xmp {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+html {
+  height: 100%;
+}
+
+img {
+  font-size: 0;
+  color: transparent;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
+}
+
+li {
+  /* For IE6 + IE7 */
+  display: list-item;
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th, td, caption {
+  font-weight: normal;
+  vertical-align: top;
+  text-align: left;
+}
+
+q {
+  quotes: none;
+}
+
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+sub, sup, small {
+  font-size: 75%;
+}
+
+sub, sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+svg {
+  overflow: hidden;
+}
+p:empty {
+  display: none !important;
+}
+
+/* #General
+--------------------------------------------------------------- */
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #fff;
+  background: #FF8046;
+}
+::selection {
+  color: #fff;
+  background: #FF8046;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Clear fix */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+
+/* Misc. */
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+a {
+  text-decoration: none;
+  color: #2B333B;
+  outline: 0;
+  display: block;
+}
+/* Forms */
+input[type="text"], input[type="password"], input[type="number"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="time"], input[type="month"], input[type="week"], input[type="email"], input[type="search"], input[type="tel"], input[type="url"], input.input-text, select, textarea {
+  color: #2B333B;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="time"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input.input-text:focus, select:focus, textarea:focus {
+  color: #FF8046;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-text-fill-color: #B0AA7E;
+    -webkit-box-shadow: 0 0 0 1000px rgba(255,255,255,0) inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Button */
+button, input[type=submit] {
+  background: none;
+  display: inline-block;
+  color: #2B333B ;
+  padding: 0;
+  border: 0;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  text-align: center;
+}
+
+button:hover, input[type=submit]:hover {
+}
+
+button:active, button:focus, input[type=submit]:active, input[type=submit]:focus {
+}
+
+button[disabled], button.disabled, button.loading {
+  cursor: default;
+  opacity: 0.3;
+}
+
+/* #Typography
+--------------------------------------------------------------- */
+
+body {
+  line-height: 1.5;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: #2B333B;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.4;
+  color: #656D74;
+}
+
+h5, h6 {
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+::-webkit-input-placeholder {
+  opacity: 0.7;
+}
+:-moz-placeholder {
+  opacity: 0.7;
+}
+/* FF 4 to 18 */
+
+::-moz-placeholder {
+  opacity: 0.7;
+}
+/* FF 19+ */
+:-ms-input-placeholder {
+  opacity: 0.5;
+}
