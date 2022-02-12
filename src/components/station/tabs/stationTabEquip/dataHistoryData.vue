@@ -54,7 +54,8 @@ export default {
         dataCollection: {type: String, require: true},
         dataId: {type: String, require: true},
         parentName: {type: String},
-        statTableShow: {type: Boolean, default: true}
+        statTableShow: {type: Boolean, default: true},
+        ieeeCode:{type:String, require: false, default: null}
     },
     data(){
         return {
@@ -500,6 +501,92 @@ export default {
                 ],
             })
         },
+        plot_protective_relay(plot_obj, that, x, y, title, name_list){
+            var data = []
+            var color = [
+                "black",
+                "darkred",
+                "darkorange",
+                "olive",
+                "darkgreen",
+                "darkblue",
+                "indigo",
+                "crimson",
+                "sandybrown",
+                "khaki",
+                "greenyellow",
+                "lightblue",
+                "mediumorchid",
+                "brown",
+                "pink",
+                "thistle",
+                "lightseagreen",
+                "lightgrey",
+                "lightpink",
+                "lightsalmon",
+                "lightseagreen",
+                "lightskyblue",
+                "lightyellow",
+                "lime",
+                "linen",
+                "magenta",
+                "maroon",
+                "mediumaquamarine",
+                "mediumvioletred",
+                "midnightblue",
+                "moccasin",
+                "orangered"
+            ]
+            // alert(this.ieeeCode)
+            for (var i=0; i<name_list.length; i++) {
+                data.push({
+                    type: "scatter",
+                    mode: "lines",
+                    name: name_list[i],
+                    x: x,
+                    y: y[i],
+                    yaxis: "y",
+                    line: { color: color[i] }
+                })
+            }
+            var layout = {
+                title: {
+                    text: title,
+                    font: {
+                        family: "Courier New, monospace",
+                        size: 30,
+                    },
+                },
+                xaxis: {
+                    domain: [0.1, 0.94],
+                    anchor: "free",
+                    position: 0,
+                },
+                yaxis: {
+                    title: {
+                        text: "跳脫狀態",
+                    },
+                },
+
+                hovermode: "closest",
+                hoverlabel: {
+                    bgcolor: "#FFFFFF",
+                    bordercolor: "#888888",
+                    font: {
+                        color: "#000000",
+                    },
+                },
+            }
+            Plotly.newPlot(plot_obj, data, layout, {
+                displaylogo: false,
+                modeBarButtonsToRemove: [
+                "sendDataToCloud",
+                "hoverClosestCartesian",
+                "hoverCompareCartesian",
+                "toggleSpikelines",
+                ],
+            })
+        },
         history_info(that, x, min, max, avg, total, _datatype, datatype, num = 1) {
             //console.log(x, min, max, avg, total)
             num = 5
@@ -594,6 +681,7 @@ export default {
                 date_range: this.date_range,
                 datepicker1: this.date_selection.date_list[0],
                 datepicker2: this.date_selection.date_list[1],
+                "IEEE_code": this.ieeeCode
 
             }).then(function(data){
                 let plot_data = data.data.data
@@ -860,6 +948,17 @@ export default {
                         )
                     }
 
+                } else if (that.dataCollection == "ProtectiveRelay") {
+                    var name_list = plot_data["name_list"]
+                    _datatype = name_list
+                    that.plot_protective_relay(
+                        MyPlot,
+                        that,
+                        x_axis,
+                        y_axis,
+                        that.dataName,
+                        name_list
+                    )
                 }
                 that.history_info(
                     that,
@@ -948,6 +1047,9 @@ export default {
             this.history_data_list()
         },
         date_selection(){
+            this.history_data_list()
+        },
+        ieeeCode(){
             this.history_data_list()
         }
     }
