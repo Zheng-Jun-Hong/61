@@ -5,13 +5,13 @@
         <div class="page_content">
             <el-tabs type="card" v-model="activeName">
                 <el-tab-pane label="分析圖表" name="chartAnalysis">
-                    <chartAnalysis/>
+                    <chart-analysis/>
                 </el-tab-pane>
                 <!-- <el-tab-pane label="電能比較表" name="elecComparision">
                     <powerCompare/>
                 </el-tab-pane> -->
                 <el-tab-pane label="DMY比較圖表" name="dmyCompare">
-                    <dmyCompare/>
+                    <dmy-compare v-if="activeName == 'dmyCompare'"/>
                 </el-tab-pane>
             </el-tabs>
         </div>
