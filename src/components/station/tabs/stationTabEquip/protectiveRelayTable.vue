@@ -266,11 +266,14 @@ export default {
         },
         dblclickHandler(row, column){
             var comfirm = false;
-            if (column.property == "label"){
+            if (column.property == "Op"){
+                console.log(row.label)
                 this.outputLabel = row.label;
                 for (var i=0; i<this.ieeeData.length; i++){
                     for (var j=0; j<this.ieeeData[i].length; j++){
-                        if (this.ieeeData[i][j]["label"] == row.label){
+                        console.log(this.ieeeData[i][j]["Attribute"]["Op"]);
+                        console.log(row.Op);
+                        if (this.ieeeData[i][j]["Attribute"]["Op"] == row.Op){
                             this.data_type = row.LN;
                             this.dataType = row.LN;
                             this.ieeeCode = this.value[i];
@@ -283,11 +286,11 @@ export default {
                     }
                 }
             }
-            else if (column.property == "label1"){
+            else if (column.property == "Op1"){
                 this.outputLabel = row.label1;
                 for (var i=0; i<this.ieeeData.length; i++){
                     for (var j=0; j<this.ieeeData[i].length; j++){
-                        if (this.ieeeData[i][j]["label"] == row.label1){
+                        if (this.ieeeData[i][j]["Attribute"]["Op"] == row.Op1){
                             this.data_type = row.LN1;
                             this.dataType = row.LN1;
                             this.ieeeCode = this.value[i];

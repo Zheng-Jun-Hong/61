@@ -10,6 +10,9 @@
                 <!-- <el-tab-pane label="電能比較表" name="elecComparision">
                     <powerCompare/>
                 </el-tab-pane> -->
+                <el-tab-pane label="DMY比較圖表" name="dmyCompare">
+                    <dmyCompare/>
+                </el-tab-pane>
             </el-tabs>
         </div>
     </div>
@@ -18,10 +21,11 @@
 <script>
 import chartAnalysis from '../components/chart/chartAnalysis.vue'
 import powerCompare from '../components/chart/powerCompare.vue'
+import dmyCompare from '../components/chart/dmyCompare.vue'
 export default {
     name: "chartOverview",
 	components:{		
-		chartAnalysis, powerCompare
+		chartAnalysis, powerCompare, dmyCompare
 	},
     data() {
         return {
